@@ -1,7 +1,7 @@
 # PubNub Package
 The Instagram Package can be used to build real time application based on the PubNub platform.
-* Domain:pubnub.com
-* Credentials: publishKey,subscribeKey,secretKey
+* Domain: pubnub.com
+* Credentials: publishKey, subscribeKey, secretKey
 
 ## How to get credentials: 
 0. Item one 

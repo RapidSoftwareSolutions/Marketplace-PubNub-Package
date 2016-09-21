@@ -1,5 +1,4 @@
 module.exports.do = function(req, res){
-    console.log('req')
     res.status(200).send({
         'package': 'PubNub',
         "tagline": "PubNub Package",
