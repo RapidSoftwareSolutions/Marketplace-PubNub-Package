@@ -1,7 +1,7 @@
 module.exports.do = function(req, res){
     console.log('req')
     res.status(200).send({
-        'package': '',
+        'package': 'PubNub',
         "tagline": "PubNub Package",
         "description": "The Instagram Package can be used to build real time application based on the PubNub platform.",
         'image': 'https://www.pubnub.com/wp-content/uploads/2016/04/pubnub-share.png',
