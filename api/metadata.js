@@ -151,40 +151,6 @@ module.exports.do = function(req, res){
                 }
             ]
         }, {
-            "name":"whereNow",
-            "args":[
-                {
-                    name: "subscribeKey",
-                    type: "String",
-                    info: "The subscribe key obtained from PubNub.",
-                },
-                {
-                    name: "cipherKey",
-                    type: "String",
-                    info: "If passed, will encrypt the payloads.",
-                },
-                {
-                    name: "authKey",
-                    type: "String",
-                    info: "If PAM enabled, this key will be used on all requests.",
-                },
-                {
-                    name: "uuid",
-                    type: "String",
-                    info: "UUID to use, if not passed, a random will be generated.",
-                },  
-            ], 
-            'callbacks':[
-                {
-                    'name':'error',
-                    'info': 'Error'
-                },
-                {
-                    'name':'success',
-                    'info': 'Success => channels: Array <string>'
-                }
-            ]
-        }, {
             "name":"getUserState",
             "args":[
                 {

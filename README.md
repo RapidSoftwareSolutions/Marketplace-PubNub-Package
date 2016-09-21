@@ -67,7 +67,7 @@ Method description
 ```json
 {	"subscribeKey": "...",
 	"channels": "ch1, ch2",
-	includeState: true
+	"includeState": true
 }
 ```
 #### Response example
@@ -144,38 +144,9 @@ Method description
 	"callback":"success",
 	"contextWrites":{
 		"#":{
-			"to":"..."
-		}
-	}
-}
-```
-
-<a name="whereNow"/>
-## PubNub.whereNow
-Method description
-
-| Field       | Type  | Description
-|-------------|-------|----------
-| subscribeKey| String| The subscribe key obtained from PubNub.
-| cipherKey   | String| If passed, will encrypt the payloads.
-| authKey     | String| If PAM enabled, this key will be used on all requests.
-| uuid        | String| UUID to use, if not passed, a random will be generated.
-
-#### Request example
-```json
-{	"subscribeKey": "...",
-	"cipherKey": "...",
-	"authKey": "...",
-	"uuid": "..."
-}
-```
-#### Response example
-```json
-{
-	"callback":"success",
-	"contextWrites":{
-		"#":{
-			"to":"..."
+			"to": {
+				channels: ['ch1', 'ch2']
+			}
 		}
 	}
 }

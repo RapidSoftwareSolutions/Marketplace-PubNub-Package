@@ -10,9 +10,7 @@ module.exports = (req, res) => {
 		subscribeKey, 
 		cipherKey,
 		authKey,
-		channels,
-		channelGroups,
-		includeState=false,
+		uuid,
 		to="to" } = req.body.args;
 
 	let r = {
@@ -20,30 +18,22 @@ module.exports = (req, res) => {
         contextWrites: {}
     };
 
-	if(!subscribeKey) {
+	if(!subscribeKey || !uuid) {
 		_.echoBadEnd(r, to, res);
 		return;
 	}
 
-	channels = channels ? channels.split(", ") : undefined;
-
-	includeState = includeState == 'true' ? true : false;
-
 	let pubnub = new PubNub({ subscribeKey });
 
-    let hereObject = {
-        includeState,
+    let whereObject = {
+        uuid,
     };
 
-    if(channelGroups) {
-    	hereObject.channelGroups = channelGroups.split(", ")
-    };
-
-    if(channels)      hereObject.channels      = channels;
-    if(authKey)       hereObject.authKey       = authKey;
+    if(cipherKey) whereObject.cipherKey = channels;
+    if(authKey)   whereObject.authKey   = authKey;
  
-    pubnub.hereNow(
-	    hereObject,
+    pubnub.whereNow(
+	    whereObject,
 	    (status, response) => {
 	        if (status.error) {
 	            r.contextWrites[to] = 'Error status: '+ status.statusCode;
