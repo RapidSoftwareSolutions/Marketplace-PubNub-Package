@@ -18,14 +18,11 @@ app.all(`/api/${PACKAGE_NAME}`, require('./api/metadata.js').do);
 fs.readdirSync('api/').forEach((file) => {
     try {
         var type      = file.substring(file.lastIndexOf('.') + 1),
-	    [method, 
-	    filename] = file.split('_'),
-            route     = filename.substring(0, filename.length - type.length - 1);
+            route     = file.substring(0, file.length - type.length - 1);
 
-	   if(!/post|get|put|delete/.test(method) || !type == 'js') return;
-		
-	   app[method](`/api/${PACKAGE_NAME}/${route}`, require(`./api/${file}`));
+	   if(!type == 'js') return;
 
+	   app.post(`/api/${PACKAGE_NAME}/${route}`, require(`./api/${file}`));
     } catch(e) { return; }
 });
 

@@ -28,8 +28,8 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "message",
-                    type: "String",
-                    info: "The destination of the message.",
+                    type: "JSON",
+                    info: "The destination of the message. Example: {text: \"Hello world\"}",
                 },
                 {
                     name: "cipherKey",
