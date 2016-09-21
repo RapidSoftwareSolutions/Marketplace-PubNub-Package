@@ -45,7 +45,7 @@ Method description
 	"callback":"success",
 	"contextWrites":{
 		"#":{
-			"to":"..."
+			"to":"Timetoken: 14744516634751170"
 		}
 	}
 }
