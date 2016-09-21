@@ -9,7 +9,7 @@ const subscribeKey     = 'sub-c-e2601c94-7f40-11e6-a627-0619f8945a4f',
       uuid             = "1234"
 
 describe('PubNub API', () => {
-    it('should return a timetoken', function() {
+    it('/publishMessageb', function() {
       this.timeout(10000);
 
       return request(app)
@@ -21,7 +21,7 @@ describe('PubNub API', () => {
         });
     });
 
-    it('should return a channels raw', function() {
+    it('/hereNow', function() {
       this.timeout(10000);
 
       return request(app)
@@ -33,12 +33,24 @@ describe('PubNub API', () => {
         });
     });
 
-    it('should return a channels array', function() {
+    it('/whereNow', function() {
       this.timeout(10000);
 
       return request(app)
         .post(`/api/${global.PACKAGE_NAME}/whereNow`)
         .send({args:{subscribeKey, uuid}})
+        .expect(200)
+        .then((res) => {
+           assert.equal(res.body.callback, 'success');
+        });
+    });
+
+    it('/getUserState', function() {
+      this.timeout(10000);
+
+      return request(app)
+        .post(`/api/${global.PACKAGE_NAME}/getUserState`)
+        .send({args:{subscribeKey, uuid, channels}})
         .expect(200)
         .then((res) => {
            assert.equal(res.body.callback, 'success');

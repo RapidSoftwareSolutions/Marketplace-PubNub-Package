@@ -145,7 +145,16 @@ Method description
 	"contextWrites":{
 		"#":{
 			"to": {
-				channels: ['ch1', 'ch2']
+				"channels": {
+		            "ch1": {
+		                "occupancy": 1,
+		                ...
+		            },
+		            "ch2": {
+		                "occupancy": 1,
+		                ...
+		            }
+		        }
 			}
 		}
 	}
@@ -168,11 +177,8 @@ Method description
 #### Request example
 ```json
 {	"subscribeKey": "...",
-	"cipherKey": "...",
-	"authKey": "...",
-	"uuid": "...",
-	"channels": "...",
-	"channelGroups": "..."
+	"uuid": "UID123",
+	"channels": "ch1, ch2",
 }
 ```
 #### Response example
@@ -181,7 +187,18 @@ Method description
 	"callback":"success",
 	"contextWrites":{
 		"#":{
-			"to":"..."
+			"to": {
+				"channels": {
+		            "ch1": {
+		                "occupancy": 1,
+		                ...
+		            },
+		            "ch2": {
+		                "occupancy": 1,
+		                ...
+		            }
+		        }
+			}		
 		}
 	}
 }
