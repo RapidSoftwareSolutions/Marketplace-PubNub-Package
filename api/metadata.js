@@ -2,7 +2,7 @@ module.exports.do = function(req, res){
     res.status(200).send({
         'package': 'PubNub',
         "tagline": "PubNub Package",
-        "description": "The Instagram Package can be used to build real time application based on the PubNub platform.",
+        "description": "The PubNub Package can be used to build real time application based on the PubNub platform.",
         'image': 'https://www.pubnub.com/wp-content/uploads/2016/04/pubnub-share.png',
         'repo': 'https://github.com/RapidSoftwareSolutions/marketplace-pubnub-package',
         'accounts': {
@@ -19,12 +19,12 @@ module.exports.do = function(req, res){
                 {
                     name: "publishKey",
                     type: "String",
-                    info: "The publish key obtained from Instagram.",
+                    info: "The publish key obtained from PubNub.",
                 },
                 {
                     name: "subscribeKey",
                     type: "String",
-                    info: "The subscribe key obtained from Instagram.",
+                    info: "The subscribe key obtained from PubNub.",
                 },
                 {
                     name: "message",
@@ -83,7 +83,7 @@ module.exports.do = function(req, res){
                 {
                     name: "subscribeKey",
                     type: "String",
-                    info: "The subscribe key obtained from Instagram.",
+                    info: "The subscribe key obtained from PubNub.",
                 },
                 {
                     name: "cipherKey",
@@ -122,7 +122,7 @@ module.exports.do = function(req, res){
                 {
                     name: "subscribeKey",
                     type: "String",
-                    info: "The subscribe key obtained from Instagram.",
+                    info: "The subscribe key obtained from PubNub.",
                 },
                 {
                     name: "cipherKey",
@@ -156,7 +156,7 @@ module.exports.do = function(req, res){
                 {
                     name: "subscribeKey",
                     type: "String",
-                    info: "The subscribe key obtained from Instagram.",
+                    info: "The subscribe key obtained from PubNub.",
                 },
                 {
                     name: "cipherKey",
@@ -190,7 +190,7 @@ module.exports.do = function(req, res){
                 {
                     name: "subscribeKey",
                     type: "String",
-                    info: "The subscribe key obtained from Instagram.",
+                    info: "The subscribe key obtained from PubNub.",
                 },
                 {
                     name: "cipherKey",
