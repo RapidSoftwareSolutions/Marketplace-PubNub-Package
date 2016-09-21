@@ -1,0 +1,34 @@
+"use strict";
+
+/** IMPORTS **/
+const express       = require('express'),
+    bodyParser      = require('body-parser'),
+    fs              = require('fs');
+
+/** SET UP **/
+const PORT          = process.env.PORT || 8080;
+global.PACKAGE_NAME = "marketplace-pubnub-package";
+
+const app = express();
+app.use(bodyParser.json(({limit: '50mb'})));
+app.use(bodyParser.urlencoded({limit: '50mb', extended:true}));
+
+app.all(`/api/${PACKAGE_NAME}`, require('./api/metadata.js').do);
+
+fs.readdirSync('api/').forEach((file) => {
+    try {
+        var type      = file.substring(file.lastIndexOf('.') + 1),
+	    [method, 
+	    filename] = file.split('_'),
+            route     = filename.substring(0, filename.length - type.length - 1);
+
+	   if(!/post|get|put|delete/.test(method) || !type == 'js') return;
+		
+	   app[method](`/api/${PACKAGE_NAME}/${route}`, require(`./api/${file}`));
+
+    } catch(e) { return; }
+});
+
+/** START LISTENING **/
+app.listen(PORT);
+module.exports = app;
