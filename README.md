@@ -1,11 +1,20 @@
+[create]:https://github.com/RapidSoftwareSolutions/Marketplace-GoogleTranslate-Package/blob/master/instructions/create.png?raw=true
+[enable]:https://github.com/RapidSoftwareSolutions/Marketplace-GoogleTranslate-Package/blob/master/instructions/enable.png?raw=true
+
 # PubNub Package
 The PubNub Package can be used to build real time application based on the PubNub platform.
 * Domain: pubnub.com
-* Credentials: publishKey, subscribeKey, secretKey
+* Credentials: publishKey, subscribeKeyd
 
 ## How to get credentials: 
-0. Item one 
-1. Item two
+0. Login to PubNub
+1. Enter a new app name and click on <kbd>Create new app</kbd>
+![Creating new app][create]
+2. Choose new app and <kbd>Create new keyset</kbd>
+3. Copy and save your keyset credentials
+4. Choose click on new keyset and enable `PRESENSE`, `STORAGE & PLAYBACK`
+![Enable][enable]
+
 
 ## TOC: 
 * [publishMessage](#publishMessage)
