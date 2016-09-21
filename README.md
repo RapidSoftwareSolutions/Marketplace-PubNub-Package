@@ -16,7 +16,7 @@ The PubNub Package can be used to build real time application based on the PubNu
  
 <a name="publishMessage"/>
 ## PubNub.publishMessage
-Method description
+Send a message to all channel subscribers.
 
 | Field         | Type  | Description
 |---------------|-------|----------
@@ -45,7 +45,7 @@ Method description
 	"callback":"success",
 	"contextWrites":{
 		"#":{
-			"to":"Timetoken: 14744516634751170"
+			"to":"Timetoken: 14744516634751170c"
 		}
 	}
 }
@@ -66,10 +66,8 @@ Method description
 #### Request example
 ```json
 {	"subscribeKey": "...",
-	"cipherKey": "...",
-	"channels": "...",
-	"channelGroups": "...",
-	"includeState": "..."
+	"channels": "ch1, ch2",
+	includeState: true
 }
 ```
 #### Response example
@@ -78,7 +76,44 @@ Method description
 	"callback":"success",
 	"contextWrites":{
 		"#":{
-			"to":"..."
+			"to": {
+			    "status" : 200,
+			    "message" : "OK",
+			    "service" : "Presence",
+			    "uuids" : [
+			        {
+			            "uuid" : "myUUID0"
+			        },
+			        {
+			            "state" : {
+			                "abcd" : {
+			                    "age" : 15
+			                }
+			            },
+			            "uuid" : "myUUID1"
+			        },
+			        {
+			            "uuid" : "b9eb408c-bcec-4d34-b4c4-fabec057ad0d"
+			        },
+			        {
+			            "state" : {
+			                "abcd" : {
+			                    "age" : 15
+			                }
+			            },
+			            "uuid" : "myUUID2"
+			        },
+			        {
+			            "state" : {
+			                "abcd" : {
+			                    "age" : 24
+			                }
+			            },
+			            "uuid" : "myUUID9"
+			        }
+			    ],
+			    "occupancy" : 5
+			}
 		}
 	}
 }

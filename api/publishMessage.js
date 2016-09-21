@@ -65,7 +65,6 @@ module.exports = (req, res) => {
     pubnub.publish(
 	    messageObject,
 	    (status, response) => {
-	    	console.log(status, response)
 	        if (status.error) {
 	            r.contextWrites[to] = 'Error status: '+ status.statusCode;
             	r.callback = 'error'
