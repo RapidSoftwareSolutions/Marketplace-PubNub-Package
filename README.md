@@ -1,5 +1,5 @@
-[create]:https://github.com/RapidSoftwareSolutions/Marketplace-GoogleTranslate-Package/blob/master/instructions/create.png?raw=true
-[enable]:https://github.com/RapidSoftwareSolutions/Marketplace-GoogleTranslate-Package/blob/master/instructions/enable.png?raw=true
+[create]:https://github.com/RapidSoftwareSolutions/Marketplace-PubNub-Package/blob/master/instructions/create.png?raw=true
+[enable]:https://github.com/RapidSoftwareSolutions/Marketplace-PubNub-Package/blob/master/instructions/enable.png?raw=true
 
 # PubNub Package
 The PubNub Package can be used to build real time application based on the PubNub platform.
