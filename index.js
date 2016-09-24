@@ -7,7 +7,7 @@ const express       = require('express'),
 
 /** SET UP **/
 const PORT          = process.env.PORT || 8080;
-global.PACKAGE_NAME = "marketplace-pubnub-package";
+global.PACKAGE_NAME = "PubNub";
 
 const app = express();
 app.use(bodyParser.json(({limit: '50mb'})));
