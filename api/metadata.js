@@ -8,7 +8,7 @@ module.exports.do = function(req, res){
         'accounts': {
             'domain': 'pubnub.com',
             'credentials': [
-                'subscribeKey', 'publishKey', 'cipherKey', 'authKey'
+                'subscribeKey', 'publishKey'
             ]
         },
         'blocks': [{
@@ -16,12 +16,12 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "publishKey",
-                    type: "String",
+                    type: "credentials",
                     info: "The publish key obtained from PubNub.",
                 },
                 {
                     name: "subscribeKey",
-                    type: "String",
+                    type: "credentials",
                     info: "The subscribe key obtained from PubNub.",
                 },
                 {
@@ -80,7 +80,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "subscribeKey",
-                    type: "String",
+                    type: "credentials",
                     info: "The subscribe key obtained from PubNub.",
                 },
                 {
@@ -119,7 +119,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "subscribeKey",
-                    type: "String",
+                    type: "credentials",
                     info: "The subscribe key obtained from PubNub.",
                 },
                 {
@@ -153,7 +153,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "subscribeKey",
-                    type: "String",
+                    type: "credentials",
                     info: "The subscribe key obtained from PubNub.",
                 },
                 {
