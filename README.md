@@ -4,7 +4,7 @@
 # PubNub Package
 The PubNub Package can be used to build real time application based on the PubNub platform.
 * Domain: pubnub.com
-* Credentials: publishKey, subscribeKeyd
+* Credentials: `subscribeKey`, `publishKey`, `cipherKey`, `authKey`
 
 ## How to get credentials: 
 0. Login to PubNub
@@ -29,8 +29,8 @@ Send a message to all channel subscribers.
 
 | Field         | Type  | Description
 |---------------|-------|----------
-| publishKey    | String| The publish key obtained from PubNub.
-| subscribeKey  | String| The subscribe key obtained from PubNub.
+| publishKey    | credentials| The publish key obtained from PubNub.
+| subscribeKey  | credentials| The subscribe key obtained from PubNub.
 | message       | JOSN  | The destination of the message. Example: {"text": "Hello world"}
 | cipherKey     | String| If passed, will encrypt the payloads.
 | authKey       | String| If PAM enabled, this key will be used on all requests.
@@ -66,7 +66,7 @@ Method description
 
 | Field        | Type  | Description
 |--------------|-------|----------
-| subscribeKey | String| The subscribe key obtained from PubNub.
+| subscribeKey | credentials| The subscribe key obtained from PubNub.
 | cipherKey    | String| If passed, will encrypt the payloads.
 | channels     | Array | Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)
 | channelGroups| Array | The channel group for which here now information should be received. (`ch1`, `ch2`, `ch3`)
@@ -134,7 +134,7 @@ Method description
 
 | Field       | Type  | Description
 |-------------|-------|----------
-| subscribeKey| String| The subscribe key obtained from PubNub.
+| subscribeKey | credentials| The subscribe key obtained from PubNub.
 | cipherKey   | String| If passed, will encrypt the payloads.
 | authKey     | String| If PAM enabled, this key will be used on all requests.
 | uuid        | String| UUID to use, if not passed, a random will be generated.
@@ -176,7 +176,7 @@ Method description
 
 | Field        | Type  | Description
 |--------------|-------|----------
-| subscribeKey | String| The subscribe key obtained from PubNub.
+| subscribeKey | credentials| The subscribe key obtained from PubNub.
 | cipherKey    | String| If passed, will encrypt the payloads.
 | authKey      | String| If PAM enabled, this key will be used on all requests.
 | uuid         | String| UUID to use, if not passed, a random will be generated.
@@ -212,4 +212,3 @@ Method description
 	}
 }
 ```
-
