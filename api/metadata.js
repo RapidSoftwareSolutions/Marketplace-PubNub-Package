@@ -8,7 +8,7 @@ module.exports.do = function(req, res){
         'accounts': {
             'domain': 'pubnub.com',
             'credentials': [
-                'subscribeKey', 'cipherKey', 'authKey'
+                'subscribeKey', 'publishKey', 'cipherKey', 'authKey'
             ]
         },
         'blocks': [{
