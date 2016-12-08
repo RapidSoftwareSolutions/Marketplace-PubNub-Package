@@ -1,56 +1,45 @@
-const _      = require('../lib/functions')
+const Q      = require('q');
+const lib    = require('../lib/functions.js');
 const PubNub = require('pubnub');
 
 module.exports = (req, res) => {
 
-	// rpt bug
-	req.body.args = _.clearArgs(req.body.args);
+    const defered = Q.defer();
 
-	let { 
-		subscribeKey, 
-		cipherKey,
-		authKey,
-		channels,
-		channelGroups,
-		uuid,
-		to="to" } = req.body.args;
+    req.body.args = lib.clearArgs(req.body.args);
 
-	let r = {
-        callback     : "",
-        contextWrites: {}
-    };
-
-	if(!subscribeKey || !uuid || !channels) {
-		_.echoBadEnd(r, to, res);
-		return;
-	}
-
-	channels = channels ? channels.split(", ") : undefined;
-
-	let pubnub = new PubNub({ subscribeKey });
-
-    let stateObject = {
+    let { 
+        subscribeKey, 
+        cipherKey,
+        authKey,
+        channels,
+        channelGroups,
         uuid,
-        channels
-    };
+        to="to" } = req.body.args;
 
-    if(channelGroups) {
-    	stateObject.channelGroups   = channelGroups.split(", ")
-    };
-    if(authKey) stateObject.authKey = authKey;
+    let required = lib.parseReq({subscribeKey, uuid, channels});
+
+    if(required.length > 0) 
+        throw new RapidError('REQUIRED_FIELDS', required);
+
+    channels = channels ? channels.split(", ") : undefined;
+
+    let pubnub      = new PubNub({ subscribeKey }),
+        stateObject = { uuid, сhannels };
+
+    if(channelGroups)
+        stateObject.channelGroups = channelGroups.split(", ")
+
+    if(authKey) 
+        stateObject.authKey = authKey;
  
     pubnub.getState(
-	    stateObject,
-	    (status, response) => {
-	        if (status.error) {
-	            r.contextWrites[to] = 'Error status: '+ status.statusCode;
-            	r.callback = 'error'
-	        } else {
-	        	r.contextWrites[to] = JSON.stringify(response);
-            	r.callback = 'success';
-	        }
+        stateObject,
+        (status, response) => {
+            if(status.error) defered.reject(status || response); 
+            else defered.resolve(response);      
+        }
+    );
 
-	        res.status(200).send(r);
-	    }
-	);
+    return defered.promise;
 }

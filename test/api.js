@@ -2,8 +2,8 @@ const app     = require('../index');
 const assert  = require('chai').assert;
 const request = require('supertest-as-promised');
 
-const subscribeKey     = 'sub-c-e2601c94-7f40-11e6-a627-0619f8945a4f',
-      publishKey       = 'pub-c-3fe2b358-e2b0-41d8-9bfe-833b6351f70c';
+const subscribeKey     = '',
+      publishKey       = '';
       message          = JSON.stringify({text: 'Hello World'}),
       channels         = "ch1, ch2";
       uuid             = "1234"

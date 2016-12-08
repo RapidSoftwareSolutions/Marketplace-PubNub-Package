@@ -17,52 +17,62 @@ module.exports.do = function(req, res){
                 {
                     name: "publishKey",
                     type: "credentials",
-                    info: "The publish key obtained from PubNub.",
+                    info: "Required: The publish key obtained from PubNub.",
+                    required: true
                 },
                 {
                     name: "subscribeKey",
                     type: "credentials",
-                    info: "The subscribe key obtained from PubNub.",
+                    info: "Required: The subscribe key obtained from PubNub.",
+                    required: true
                 },
                 {
                     name: "message",
                     type: "JSON",
-                    info: "The destination of the message. Example: {text: \"Hello world\"}",
+                    info: "Required: The destination of the message. Example: {text: \"Hello world\"}",
+                    required: true
                 },
                 {
                     name: "cipherKey",
                     type: "String",
                     info: "If passed, will encrypt the payloads.",
+                    required: false
                 },                
                 {
                     name: "authKey",
                     type: "String",
                     info: "If PAM enabled, this key will be used on all requests.",
+                    required: false
                 },
                 {
                     name: "uuid",
                     type: "String",
                     info: "UUID to use, if not passed, a random will be generated.",
+                    required: false
                 },  
                 {
                     name: "channel",
                     type: "String",
                     info: "Publish extra meta with the request.",
+                    required: false
                 },
                 {
                     name: "storeInHistory",
                     type: "String", //Boolean
                     info: "This parameter overrides default account configuration on message saving. `true` to Save, `false` to not save. Default is `true`.",
+                    required: false
                 },
                 {
                     name: "sendByPost",
                     type: "String", //Boolean
                     info: "If `true` the messages are stored in history. `true` to send via post. Default is `false`.",
+                    required: false
                 },
                 {
                     name: "meta",
                     type: "JSON",
                     info: "Publish extra meta with the request. Example:  {\"cool\": \"meta\"}",
+                    required: false
                 }
             ], 
             'callbacks':[
@@ -81,27 +91,32 @@ module.exports.do = function(req, res){
                 {
                     name: "subscribeKey",
                     type: "credentials",
-                    info: "The subscribe key obtained from PubNub.",
+                    info: "Required: The subscribe key obtained from PubNub.",
+                    required: true
                 },
                 {
                     name: "cipherKey",
                     type: "String",
                     info: "If passed, will encrypt the payloads.",
+                    required: false
                 },
                 {
                     name: "channels",
                     type: "Array",
                     info: "Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)",
+                    required: false
                 },
                 {
                     name: "channelGroups",
                     type: "Array",
                     info: "The channel group for which here now information should be received. (`ch1`, `ch2`, `ch3`)",
+                    required: false
                 },
                 {
                     name: "includeState",
                     type: "String", //Boolean
                     info: "Setting state to `true` enables the return of subscriber state information. Default is `false`",
+                    required: false
                 }
             ], 
             'callbacks':[
@@ -120,22 +135,26 @@ module.exports.do = function(req, res){
                 {
                     name: "subscribeKey",
                     type: "credentials",
-                    info: "The subscribe key obtained from PubNub.",
+                    info: "Required: The subscribe key obtained from PubNub.",
+                    required: true
                 },
                 {
                     name: "cipherKey",
                     type: "String",
                     info: "If passed, will encrypt the payloads.",
+                    required: false
                 },
                 {
                     name: "authKey",
                     type: "String",
                     info: "If PAM enabled, this key will be used on all requests.",
+                    required: false
                 },
                 {
                     name: "uuid",
                     type: "String",
-                    info: "UUID to use, if not passed, a random will be generated.",
+                    info: "Required: UUID to use, if not passed, a random will be generated.",
+                    required: true
                 },  
             ], 
             'callbacks':[
@@ -154,32 +173,38 @@ module.exports.do = function(req, res){
                 {
                     name: "subscribeKey",
                     type: "credentials",
-                    info: "The subscribe key obtained from PubNub.",
+                    info: "Required: The subscribe key obtained from PubNub.",
+                    required: true
                 },
                 {
                     name: "cipherKey",
                     type: "String",
                     info: "If passed, will encrypt the payloads.",
+                    required: false
                 },
                 {
                     name: "authKey",
                     type: "String",
                     info: "If PAM enabled, this key will be used on all requests.",
+                    required: false
                 },
                 {
                     name: "uuid",
                     type: "String",
-                    info: "UUID to use, if not passed, a random will be generated.",
+                    info: "Required: UUID to use, if not passed, a random will be generated.",
+                    required: true
                 },  
                 {
                     name: "channels",
                     type: "Array",
-                    info: "Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)",
+                    info: "Required: Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)",
+                    required: true
                 },
                 {
                     name: "channelGroups",
                     type: "Array",
                     info: "The channel group for which here now information should be received. (`ch1`, `ch2`, `ch3`)",
+                    required: false
                 },
             ], 
             'callbacks':[
