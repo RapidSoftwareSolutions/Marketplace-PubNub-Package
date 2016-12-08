@@ -2,6 +2,7 @@ module.exports.do = function(req, res){
     res.status(200).send({
         'package': 'PubNub',
         "tagline": "PubNub API Package",
+        "keywords": ["API", "iot", "message", "messaging", "subscription"],
         "description": "The PubNub Package can be used to build real time application based on the PubNub platform.",
         'image': 'https://www.pubnub.com/wp-content/uploads/2016/04/pubnub-share.png',
         'repo': 'https://github.com/RapidSoftwareSolutions/marketplace-pubnub-package',
