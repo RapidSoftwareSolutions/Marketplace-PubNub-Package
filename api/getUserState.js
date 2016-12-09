@@ -25,7 +25,7 @@ module.exports = (req, res) => {
     channels = channels ? channels.split(", ") : undefined;
 
     let pubnub      = new PubNub({ subscribeKey }),
-        stateObject = { uuid, сhannels };
+        stateObject = { uuid, channels };
 
     if(channelGroups)
         stateObject.channelGroups = channelGroups.split(", ")
@@ -36,7 +36,10 @@ module.exports = (req, res) => {
     pubnub.getState(
         stateObject,
         (status, response) => {
-            if(status.error) defered.reject(status || response); 
+            if(status.error) {
+                console.log(status, response)
+                defered.reject(status || response); 
+            }
             else defered.resolve(response);      
         }
     );
