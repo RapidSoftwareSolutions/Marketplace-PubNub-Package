@@ -14,6 +14,7 @@ module.exports.do = function(req, res){
         },
         'blocks': [{
             "name":"publishMessage",
+            "description": "Send a message to all channel subscribers.",
             "args":[
                 {
                     name: "publishKey",
@@ -88,6 +89,7 @@ module.exports.do = function(req, res){
             ]
         }, {
             "name":"hereNow",
+            "description": "Obtain information about the current state of a channel including a list of unique user-ids currently subscribed to the channel and the total occupancy count of the channel.",
             "args":[
                 {
                     name: "subscribeKey",
@@ -132,6 +134,7 @@ module.exports.do = function(req, res){
             ]
         }, {
             "name":"whereNow",
+            "description": "You can obtain information about the current list of a channels to which a uuid is subscribed to by calling the whereNow function in your application.",
             "args":[
                 {
                     name: "subscribeKey",
@@ -170,6 +173,7 @@ module.exports.do = function(req, res){
             ]
         }, {
             "name":"getUserState",
+            "description": "The state API is used to get key/value pairs specific to a subscriber uuid.",
             "args":[
                 {
                     name: "subscribeKey",

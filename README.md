@@ -41,7 +41,7 @@ Send a message to all channel subscribers.
 ```
 
 ## PubNub.hereNow
-Method description
+Obtain information about the current state of a channel including a list of unique user-ids currently subscribed to the channel and the total occupancy count of the channel.
 
 | Field        | Type       | Description
 |--------------|------------|----------
@@ -60,7 +60,7 @@ Method description
 ```
 
 ## PubNub.whereNow
-Method description
+You can obtain information about the current list of a channels to which a uuid is subscribed to by calling the whereNow function in your application.
 
 | Field       | Type       | Description
 |-------------|------------|----------
@@ -70,7 +70,7 @@ Method description
 | uuid        | String     | Required: UUID to use, if not passed, a random will be generated.
 
 ## PubNub.getUserState
-Method description
+The state API is used to get key/value pairs specific to a subscriber uuid.
 
 | Field        | Type       | Description
 |--------------|------------|----------
