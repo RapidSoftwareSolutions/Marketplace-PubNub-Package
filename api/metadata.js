@@ -12,6 +12,25 @@ module.exports.do = function(req, res){
                 'subscribeKey', 'publishKey'
             ]
         },
+        'events': [
+            {
+                "name": "presence",
+                "description": "This method is called when various actions are done in a specified channel",
+                "payload": {
+                    "uuid": 'uuid',
+                    "timestamp": 123456789,
+                    "sub_key": 'sub-a-bcd123efg456-hijk7890',
+                    "status": 'success',
+                    "occupancy": 2,
+                    "channel": 'Channel-name',
+                    "action": 'join'
+                },
+                "steps": [
+                    "Under the 'Application add-ons' section, enable 'Presence'",
+                    "Set all callback URLs to the following: __WEBHOOK_URL__"
+                ]
+            }
+        ],
         'blocks': [{
             "name":"publishMessage",
             "description": "Send a message to all channel subscribers.",
