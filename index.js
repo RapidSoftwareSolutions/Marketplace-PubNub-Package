@@ -4,6 +4,7 @@ global.PACKAGE_NAME = "PubNub";
 
 global.RapidError = function(code, fields) {
     let messages = {
+        'M_KEYS':                 'Mismatching subscription keys.',
         'REQUIRED_FIELDS':        'Please, check and fill in required fields.',
         'JSON_VALIDATION':        'Syntax error. Incorrect input JSON. Please, check fields with JSON input.',
         'INTERNAL_PACKAGE_ERROR': 'Something went wrong inside the package.'
