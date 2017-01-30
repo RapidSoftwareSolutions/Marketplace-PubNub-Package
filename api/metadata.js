@@ -12,7 +12,7 @@ module.exports.do = function(req, res){
                 'subscribeKey', 'publishKey'
             ]
         },
-        /*'events': [
+        'events': [
             {
                 "name": "presence",
                 "description": "This method is called when various actions are done in a specified channel",
@@ -30,7 +30,7 @@ module.exports.do = function(req, res){
                     "Set all callback URLs to the following: __WEBHOOK_URL__"
                 ]
             }
-        ],*/
+        ],
         'blocks': [{
             "name":"publishMessage",
             "description": "Send a message to all channel subscribers.",
