@@ -28,6 +28,14 @@ module.exports.do = function(req, res){
                 "steps": [
                     "Under the 'Application add-ons' section, enable 'Presence'",
                     "Set all callback URLs to the following: __WEBHOOK_URL__"
+                ],
+                'args': [
+                    {
+                        'name': 'subscriptionKey',
+                        'type': 'credentials',
+                        'info': 'Subscription key',
+                        'required': false
+                    }
                 ]
             }
         ],
