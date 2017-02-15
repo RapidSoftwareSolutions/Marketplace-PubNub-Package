@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/PubNub/functions?utm_source=RapidAPIGitHub_PubNubFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 [create]:https://github.com/RapidSoftwareSolutions/Marketplace-PubNub-Package/blob/master/instructions/create.png?raw=true
 [enable]:https://github.com/RapidSoftwareSolutions/Marketplace-PubNub-Package/blob/master/instructions/enable.png?raw=true
 

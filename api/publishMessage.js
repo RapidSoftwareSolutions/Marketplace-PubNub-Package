@@ -29,11 +29,18 @@ module.exports = (req, res) => {
     storeInHistory = storeInHistory == 'true' ? true : false;
     sendByPost     = sendByPost     == 'true' ? true : false;
 
+    if(meta && typeof meta == 'string') 
     try {
-        if(meta && typeof meta == 'string') meta = JSON.parse(meta);
-        if(typeof message == 'string') message = JSON.parse(message);
+        meta = JSON.parse(meta);
     } catch(e) {
          throw new RapidError('JSON_VALIDATION');
+    }
+
+    if(typeof message == 'string') 
+    try {
+        message = JSON.parse(message);
+    } catch(e) {
+        message = {text: message};
     }
 
     let pubnub = new PubNub({ publishKey, subscribeKey });

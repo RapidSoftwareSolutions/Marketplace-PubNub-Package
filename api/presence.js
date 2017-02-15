@@ -1,4 +1,4 @@
-const Q = require('Q');
+const Q = require('q');
 
 module.exports = (req, res) => {
     const deferred = Q.defer();

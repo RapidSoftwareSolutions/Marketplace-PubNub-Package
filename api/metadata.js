@@ -58,7 +58,7 @@ module.exports.do = function(req, res){
                 {
                     name: "message",
                     type: "JSON",
-                    info: "Required: The destination of the message. Example: {text: \"Hello world\"}",
+                    info: "Required: The destination of the message. Example: {\"text\": \"Hello world\"}",
                     required: true
                 },
                 {
