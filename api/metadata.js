@@ -32,9 +32,15 @@ module.exports.do = function(req, res){
                 'args': [
                     {
                         'name': 'subscriptionKey',
-                        'type': 'credentials',
+                        'type': 'string',
                         'info': 'Subscription key',
-                        'required': false
+                        'required': true
+                    },
+                    {
+                        'name': 'channel',
+                        'type': 'string',
+                        'info': 'Name of the channel',
+                        'required': true
                     }
                 ]
             }
