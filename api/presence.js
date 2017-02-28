@@ -10,7 +10,7 @@ module.exports = (req, res) => {
     const resp = JSON.stringify({
         http_resp: "",
         client_msg: body,
-        token: found._rapid_sock_token
+        socket_token: found._rapid_sock_token
     });
 
     deferred.resolve(resp);

@@ -31,7 +31,7 @@ module.exports.do = function(req, res){
                 ],
                 'args': [
                     {
-                        'name': 'subscriptionKey',
+                        'name': 'sub_key',
                         'type': 'string',
                         'info': 'Subscription key',
                         'required': true
