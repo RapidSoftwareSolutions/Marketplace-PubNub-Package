@@ -26,6 +26,9 @@ module.exports.do = function(req, res){
                     "action": 'join'
                 },
                 "steps": [
+                    "Navigate to https://admin.pubnub.com/",
+                    "Select the app you would like to setup",
+                    "In the 'Key Info' page, select the keyset you would like to work with",
                     "Under the 'Application add-ons' section, enable 'Presence'",
                     "Set all callback URLs to the following: __WEBHOOK_URL__"
                 ],
