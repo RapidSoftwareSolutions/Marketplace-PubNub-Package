@@ -4,13 +4,13 @@ module.exports = (req, res) => {
     const deferred = Q.defer();
     const { body, params } = req.body.args;
 
-    const found = params.find(param => param.sub_key === body.sub_key);
-    if (!found) throw new RapidError('M_KEYS');
+    const found = params.filter(param => param.sub_key === body.sub_key);
+    if (!found.length) throw new RapidError('M_KEYS');
 
     const resp = JSON.stringify({
         http_resp: "",
         client_msg: body,
-        socket_token: found._rapid_sock_token
+        params: found
     });
 
     deferred.resolve(resp);
