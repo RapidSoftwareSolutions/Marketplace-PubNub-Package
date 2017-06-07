@@ -141,15 +141,25 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "channels",
-                    type: "Array",
+                    type: "List",
                     info: "Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)",
-                    required: false
+                    required: false,
+                    structure: {
+                        name: "channel",
+                        type: "String",
+                        info: "Name to return occupancy results."
+                    }
                 },
                 {
                     name: "channelGroups",
-                    type: "Array",
+                    type: "List",
                     info: "The channel group for which here now information should be received. (`ch1`, `ch2`, `ch3`)",
-                    required: false
+                    required: false,
+                    structure: {
+                        name: "channel",
+                        type: "String",
+                        info: "The channel group."
+                    }
                 },
                 {
                     name: "includeState",
@@ -234,18 +244,28 @@ module.exports.do = function(req, res){
                     type: "String",
                     info: "Required: UUID to use, if not passed, a random will be generated.",
                     required: true
-                },  
+                },
                 {
                     name: "channels",
-                    type: "Array",
-                    info: "Required: Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)",
-                    required: true
+                    type: "List",
+                    info: "Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)",
+                    required: false,
+                    structure: {
+                        name: "channel",
+                        type: "String",
+                        info: "Name to return occupancy results."
+                    }
                 },
                 {
                     name: "channelGroups",
-                    type: "Array",
+                    type: "List",
                     info: "The channel group for which here now information should be received. (`ch1`, `ch2`, `ch3`)",
-                    required: false
+                    required: false,
+                    structure: {
+                        name: "channel",
+                        type: "String",
+                        info: "The channel group."
+                    }
                 },
             ], 
             'callbacks':[

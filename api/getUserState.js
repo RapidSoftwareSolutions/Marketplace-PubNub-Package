@@ -22,13 +22,22 @@ module.exports = (req, res) => {
     if(required.length > 0) 
         throw new RapidError('REQUIRED_FIELDS', required);
 
-    channels = channels ? channels.split(", ") : undefined;
+    if(channels!=undefined){
+        if(typeof(channels)=="object"){
+            channels = channels.join(", ");
+        }
+        channels = channels.split(", ");
+    }
 
     let pubnub      = new PubNub({ subscribeKey }),
         stateObject = { uuid, channels };
 
-    if(channelGroups)
-        stateObject.channelGroups = channelGroups.split(", ")
+    if(channelGroups!=channelGroups){
+        if(typeof(channelGroups)=="object"){
+            channelGroups = channelGroups.join(", ");
+        }
+        hereObject.channelGroups = channelGroups.split(", ")
+    };
 
     if(authKey) 
         stateObject.authKey = authKey;

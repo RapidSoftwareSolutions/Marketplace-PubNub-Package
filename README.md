@@ -17,6 +17,14 @@ The PubNub Package can be used to build real time application based on the PubNu
 4. Choose click on new keyset and enable `PRESENSE`, `STORAGE & PLAYBACK`
 ![Enable][enable]
  
+## Custom datatypes:
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]```
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
 
 ## PubNub.publishMessage
 Send a message to all channel subscribers.
@@ -49,8 +57,8 @@ Obtain information about the current state of a channel including a list of uniq
 |--------------|------------|----------
 | subscribeKey | credentials| Required: The subscribe key obtained from PubNub.
 | cipherKey    | String     | If passed, will encrypt the payloads.
-| channels     | Array      | Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)
-| channelGroups| Array      | The channel group for which here now information should be received. (`ch1`, `ch2`, `ch3`)
+| channels     | List      | Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)
+| channelGroups| List      | The channel group for which here now information should be received. (`ch1`, `ch2`, `ch3`)
 | includeState | String     | Setting state to `true` enables the return of subscriber state information. Default is `false`
 
 #### Request example
@@ -80,8 +88,8 @@ The state API is used to get key/value pairs specific to a subscriber uuid.
 | cipherKey    | String     | If passed, will encrypt the payloads.
 | authKey      | String     | If PAM enabled, this key will be used on all requests.
 | uuid         | String     | Required: UUID to use, if not passed, a random will be generated.
-| channels     | Array      | Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)
-| channelGroups| Array      | The channel group for which here now information should be received. (`ch1`, `ch2`, `ch3`)
+| channels     | List      | Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)
+| channelGroups| List      | The channel group for which here now information should be received. (`ch1`, `ch2`, `ch3`)
 
 #### Request example
 ```json

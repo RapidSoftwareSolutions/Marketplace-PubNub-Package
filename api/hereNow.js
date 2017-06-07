@@ -22,7 +22,13 @@ module.exports = (req, res) => {
     if(required.length > 0) 
         throw new RapidError('REQUIRED_FIELDS', required);
 
-    channels     = channels ? channels.split(", ") : undefined;
+    if(channels!=undefined){
+        if(typeof(channels)=="object"){
+            channels = channels.join(", ");
+        }
+        channels = channels.split(", ");
+    }
+
     includeState = includeState == 'true' ? true : false;
 
     let pubnub = new PubNub({ subscribeKey });
@@ -35,14 +41,21 @@ module.exports = (req, res) => {
         hereObject.channelGroups = channelGroups.split(", ")
     };
 
+    if(channelGroups!=channelGroups){
+        if(typeof(channelGroups)=="object"){
+            channelGroups = channelGroups.join(", ");
+        }
+        hereObject.channelGroups = channelGroups.split(", ")
+    };
+
     if(channels) hereObject.channels = channels;
     if(authKey)  hereObject.authKey  = authKey;
- 
+
     pubnub.hereNow(
         hereObject,
         (status, response) => {
-            if(status.error) defered.reject(status || response); 
-            else defered.resolve(response);   
+            if(status.error) defered.reject(status || response);
+            else defered.resolve(response);
         }
     );
 
