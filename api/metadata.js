@@ -249,7 +249,7 @@ module.exports.do = function(req, res){
                     name: "channels",
                     type: "List",
                     info: "Specifies the `channel` name to return occupancy results. If `channel` is not provided, `hereNow()` will return data for all `channels`. (`ch1`, `ch2`, `ch3`)",
-                    required: false,
+                    required: true,
                     structure: {
                         name: "channel",
                         type: "String",

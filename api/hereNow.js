@@ -41,7 +41,7 @@ module.exports = (req, res) => {
         hereObject.channelGroups = channelGroups.split(", ")
     };
 
-    if(channelGroups!=channelGroups){
+    if(channelGroups!=undefined){
         if(typeof(channelGroups)=="object"){
             channelGroups = channelGroups.join(", ");
         }
