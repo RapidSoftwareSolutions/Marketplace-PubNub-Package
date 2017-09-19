@@ -48,6 +48,13 @@ module.exports.do = function(req, res){
                 ]
             }
         ],
+        'steps': [
+            "Login to PubNub (https://www.pubnub.com/docs",
+            "Enter a new app name and click on Create new app",
+            "Choose new app and Create new keyset",
+            "Copy and save your keyset credentials",
+            "Choose click on new keyset and enable PRESENSE, STORAGE & PLAYBACK"
+        ],
         'blocks': [{
             "name":"publishMessage",
             "description": "Send a message to all channel subscribers.",
