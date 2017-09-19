@@ -9,9 +9,8 @@ The PubNub Package can be used to build real time application based on the PubNu
 * Credentials: `subscribeKey`, `publishKey`, `cipherKey`, `authKey`
 
 ## How to get credentials: 
-0. Login to PubNub
+0. Login to [PubNub](https://admin.pubnub.com/#/login)
 1. Enter a new app name and click on <kbd>Create new app</kbd>
-![Creating new app][create]
 2. Choose new app and <kbd>Create new keyset</kbd>
 3. Copy and save your keyset credentials
 4. Choose click on new keyset and enable `PRESENSE`, `STORAGE & PLAYBACK`
